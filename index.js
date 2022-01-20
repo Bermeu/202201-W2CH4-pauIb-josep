@@ -39,9 +39,26 @@ class MockArray {
     return elementToReturn;
   }
 
-  filter() {}
+  filter(actingFunc) {
+    let returnedObject = {};
 
-  map() {}
+    Object.keys(this.obj).forEach((key) => {
+      if (actingFunc(this.obj[key])) {
+        returnedObject.push({ "`${this.obj[key]}`": this.obj[key] });
+      }
+    });
+    return returnedObject;
+  }
+
+  map(actingFunc) {
+    let returnedObject = {};
+
+    Object.keys(this.obj).forEach((key) => {
+      this.obj[key] = actingFunc(this.obj[key]);
+      returnedObject.push({ "`${this.obj[key]}`": actingFunc(this.obj[key]) });
+    });
+    return returnedObject;
+  }
 }
 
 const even = (element) => element % 2 === 0;
