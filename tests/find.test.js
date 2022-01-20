@@ -32,4 +32,20 @@ describe("Given MockArray.find(even)", () => {
       expect(result).toBe(expectedResult);
     });
   });
+
+  describe("When inputed an object with 3 entries that where NONE complies with function even", () => {
+    test("It should return undefined", () => {
+      const expectedResult = undefined;
+      const valueToGive = {
+        a: 1,
+        b: 3,
+        c: 5,
+      };
+
+      const iniciatedObject = new MockArray(valueToGive);
+      const result = iniciatedObject.find(even);
+
+      expect(result).toBe(expectedResult);
+    });
+  });
 });
