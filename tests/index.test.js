@@ -1,5 +1,5 @@
 /* eslint-disable no-new */
-import { MockArray } from "./index.js";
+import { MockArray } from "../index";
 
 describe("Given MockArray", () => {
   describe("When it recives 3", () => {
