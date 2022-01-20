@@ -1,7 +1,9 @@
-class mockArray {
+class MockArray {
   obj = {};
 
-  length() {}
+  get length() {
+    return Object.keys(this.obj).length;
+  }
 
   push() {}
 
@@ -14,4 +16,8 @@ class mockArray {
   map() {}
 }
 
-console.log(mockArray.length);
+const mockArrayInstanciated = new MockArray();
+
+console.log(mockArrayInstanciated);
+
+console.log(mockArrayInstanciated.length);
