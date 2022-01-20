@@ -1,4 +1,4 @@
-class mockArray {
+class MockArray {
   obj = {};
 
   length() {}
@@ -13,3 +13,7 @@ class mockArray {
 
   map() {}
 }
+
+const mockArrayInstanciated = new MockArray();
+
+console.log(mockArrayInstanciated);
