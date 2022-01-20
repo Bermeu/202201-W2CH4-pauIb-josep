@@ -1,11 +1,11 @@
 class MockArray {
-  /*obj = {
+  /* obj = {
          a: 0,
     b: 1,
     c: 1,
     d: 2, 
-  };*/
-  
+  }; */
+
   obj;
 
   constructor(entryObj) {
@@ -53,7 +53,7 @@ class MockArray {
   }
 
   filter(actingFunc) {
-    let returnedObject = {};
+    const returnedObject = {};
 
     Object.keys(this.obj).forEach((key) => {
       if (!actingFunc(this.obj[key])) {
@@ -65,7 +65,7 @@ class MockArray {
   }
 
   map(actingFunc) {
-    let returnedObject = {};
+    const returnedObject = {};
 
     Object.keys(this.obj).forEach((key) => {
       this.obj[key] = actingFunc(this.obj[key]);
@@ -86,19 +86,19 @@ const arrayObject = {
   c: "",
   d: 4,
 };
-//Begin of removable lines
+// Begin of removable lines
 const mockArrayInstanciated = new MockArray(arrayObject);
 
-console.log(mockArrayInstanciated.length);
+// console.log(mockArrayInstanciated.length);
 
-console.log(mockArrayInstanciated.some(even));
+// console.log(mockArrayInstanciated.some(even));
 
-console.log(mockArrayInstanciated.find(even));
+// console.log(mockArrayInstanciated.find(even));
 
-console.log(mockArrayInstanciated.filter(even));
+// console.log(mockArrayInstanciated.filter(even));
 
-console.log(mockArrayInstanciated.map(addTwo));
+// console.log(mockArrayInstanciated.map(addTwo));
 
-//End of removable lines
+// End of removable lines
 
 export { even, MockArray };
