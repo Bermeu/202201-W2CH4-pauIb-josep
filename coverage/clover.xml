@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1642715190163" clover="3.2.0">
-  <project timestamp="1642715190163" name="All files">
+<coverage generated="1642716249319" clover="3.2.0">
+  <project timestamp="1642716249319" name="All files">
     <metrics statements="25" coveredstatements="23" conditionals="10" coveredconditionals="9" methods="10" coveredmethods="7" elements="45" coveredelements="39" complexity="0" loc="25" ncloc="25" packages="1" files="1" classes="1"/>
     <file name="index.js" path="E:\Data\Bootcamp\Work\Local\week2\202201-W2CH4-pauIb-josep\index.js">
       <metrics statements="25" coveredstatements="23" conditionals="10" coveredconditionals="9" methods="10" coveredmethods="7"/>
