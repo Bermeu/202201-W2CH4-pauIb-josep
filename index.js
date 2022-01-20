@@ -5,7 +5,10 @@ class MockArray {
     return Object.keys(this.obj).length;
   }
 
-  push() {}
+  push(value) {
+    const lengthArray = this.length;
+    this.obj[`property${lengthArray}`] = value;
+  }
 
   some() {}
 
@@ -18,7 +21,13 @@ class MockArray {
 
 const mockArrayInstanciated = new MockArray();
 
-console.log(mockArrayInstanciated);
+/* console.log(mockArrayInstanciated); */
 
 console.log(mockArrayInstanciated.length);
 
+mockArrayInstanciated.push(23);
+mockArrayInstanciated.push(23);
+mockArrayInstanciated.push(23);
+mockArrayInstanciated.push(23);
+
+console.log(mockArrayInstanciated.length);
