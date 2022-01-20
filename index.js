@@ -10,7 +10,10 @@ class MockArray {
     return Object.keys(this.obj).length;
   }
 
-  push() {}
+  push(value) {
+    const lengthArray = this.length;
+    this.obj[`property${lengthArray}`] = value;
+  }
 
   some(actingFunc) {
     let response = false;
@@ -33,8 +36,17 @@ const even = (element) => element % 2 === 0;
 
 const mockArrayInstanciated = new MockArray();
 
-console.log(mockArrayInstanciated);
+/* console.log(mockArrayInstanciated); */
 
 console.log(mockArrayInstanciated.length);
 
+
 console.log(mockArrayInstanciated.some(even));
+
+mockArrayInstanciated.push(23);
+mockArrayInstanciated.push(23);
+mockArrayInstanciated.push(23);
+mockArrayInstanciated.push(23);
+
+console.log(mockArrayInstanciated.length);
+
