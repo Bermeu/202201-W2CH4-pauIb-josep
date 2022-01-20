@@ -16,9 +16,8 @@ class MockArray {
     return Object.keys(this.obj).length;
   }
 
-  push(value) {
-    const lengthArray = this.length;
-    this.obj[`property${lengthArray}`] = value;
+  push(newValue) {
+    this.obj[this.length] = newValue;
   }
 
   some(actingFunc) {
