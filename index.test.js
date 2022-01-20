@@ -1,3 +1,4 @@
+/* eslint-disable no-new */
 import { MockArray } from "./index.js";
 
 describe("Given MockArray", () => {
@@ -7,7 +8,7 @@ describe("Given MockArray", () => {
       const valueToGive = 3;
 
       expect(() => {
-        const generatedArrayObject = new MockArray(valueToGive);
+        new MockArray(valueToGive);
       }).toThrow(expectedError);
     });
   });
@@ -18,7 +19,7 @@ describe("Given MockArray", () => {
       const valueToGive = {};
 
       expect(() => {
-        const generatedArrayObject = new MockArray(valueToGive);
+        new MockArray(valueToGive);
       }).toThrow(expectedError);
     });
   });
