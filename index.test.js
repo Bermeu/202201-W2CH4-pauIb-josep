@@ -11,4 +11,15 @@ describe("Given MockArray", () => {
       }).toThrow(expectedError);
     });
   });
+
+  describe("When it recives {}", () => {
+    test("It should throw and error with the msg 'Input object lenght cannot be 0'", () => {
+      const expectedError = "Input object lenght cannot be 0";
+      const valueToGive = {};
+
+      expect(() => {
+        const generatedArrayObject = new MockArray(valueToGive);
+      }).toThrow(expectedError);
+    });
+  });
 });
