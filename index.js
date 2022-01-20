@@ -1,14 +1,4 @@
 class MockArray {
-<<<<<<< HEAD
-=======
-  /* obj = {
-         a: 0,
-    b: 1,
-    c: 1,
-    d: 2, 
-  }; */
-
->>>>>>> 8e08e52 (Fixed jest config to ignore index.js)
   obj;
 
   constructor(entryObj) {
@@ -54,7 +44,7 @@ class MockArray {
     });
     return elementToReturn;
   }
-  
+
   filter(actingFunc) {
     const returnedObject = {};
 
