@@ -1,4 +1,14 @@
 class MockArray {
+<<<<<<< HEAD
+=======
+  /* obj = {
+         a: 0,
+    b: 1,
+    c: 1,
+    d: 2, 
+  }; */
+
+>>>>>>> 8e08e52 (Fixed jest config to ignore index.js)
   obj;
 
   constructor(entryObj) {
@@ -44,29 +54,32 @@ class MockArray {
     });
     return elementToReturn;
   }
+  
+  filter(actingFunc) {
+    const returnedObject = {};
 
-  filter() {}
+    Object.keys(this.obj).forEach((key) => {
+      if (!actingFunc(this.obj[key])) {
+        /* returnedObject.push({ "`${this.obj[key]}`": this.obj[key] }); */
+        delete this.obj[key];
+      }
+    });
+    return this.obj;
+  }
 
-  map() {}
+  map(actingFunc) {
+    const returnedObject = {};
+
+    Object.keys(this.obj).forEach((key) => {
+      this.obj[key] = actingFunc(this.obj[key]);
+      /* returnedObject = this.push({
+        "`${this.obj[key]}`": actingFunc(this.obj[key]),
+      }); */
+    });
+    return this.obj;
+  }
 }
 
 const even = (element) => element % 2 === 0;
-
-const arrayObject = {
-  a: 2,
-  b: "",
-  c: "",
-  d: 4,
-};
-// Begin of removable lines
-// const mockArrayInstanciated = new MockArray(arrayObject);
-
-// console.log(mockArrayInstanciated.length);
-
-// console.log(mockArrayInstanciated.some(even));
-
-// console.log(mockArrayInstanciated.find(even));
-
-// End of removable lines
 
 export { even, MockArray };
