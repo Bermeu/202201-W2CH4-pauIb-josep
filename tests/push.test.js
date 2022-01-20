@@ -1,15 +1,4 @@
-class MockArray {
-  obj = {};
-
-  get length() {
-    return Object.keys(this.obj).length;
-  }
-
-  push(value) {
-    const lengthArray = this.length;
-    this.obj[`property${lengthArray}`] = value;
-  }
-}
+import { MockArray } from "../index";
 
 describe("Given a push method and obj={}", () => {
   describe("When it receives 23", () => {

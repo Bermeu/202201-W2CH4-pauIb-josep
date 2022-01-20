@@ -1,16 +1,4 @@
-class MockArray {
-  obj = {};
-
-  map(actingFunc) {
-    let returnedObject = {};
-
-    Object.keys(this.obj).forEach((key) => {
-      this.obj[key] = actingFunc(this.obj[key]);
-      returnedObject.push({ "`${this.obj[key]}`": actingFunc(this.obj[key]) });
-    });
-    return returnedObject;
-  }
-}
+import { MockArray } from "../index";
 
 describe("Given a map method and obj={}", () => {
   describe("When it receives 23", () => {
