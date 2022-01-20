@@ -43,8 +43,10 @@ class MockArray {
 
   map() {}
 }
+
 const even = (element) => element % 2 === 0;
 
+//Begin of removable lines
 const mockArrayInstanciated = new MockArray();
 
 console.log(mockArrayInstanciated.length);
@@ -52,3 +54,7 @@ console.log(mockArrayInstanciated.length);
 console.log(mockArrayInstanciated.some(even));
 
 console.log(mockArrayInstanciated.find(even));
+
+//End of removable lines
+
+export { even, MockArray };
