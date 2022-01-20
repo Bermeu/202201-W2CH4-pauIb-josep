@@ -20,4 +20,28 @@ describe("Given MockArray.push()", () => {
       expect(JSON.stringify(iniciatedObject.obj)).toBe(expectedResult);
     });
   });
+
+  describe("When inputed empty string ''", () => {
+    test("Then it should add '' to the object MockArray.obj", () => {
+      const instanciatedArray = {
+        0: "",
+        1: 21,
+        2: 43,
+      };
+
+      const expectedResult = JSON.stringify({
+        0: "",
+        1: 21,
+        2: 43,
+        3: "",
+      });
+
+      const valueToGive = "";
+
+      const iniciatedObject = new MockArray(instanciatedArray);
+      iniciatedObject.push(valueToGive);
+
+      expect(JSON.stringify(iniciatedObject.obj)).toBe(expectedResult);
+    });
+  });
 });
