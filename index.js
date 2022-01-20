@@ -5,6 +5,10 @@ class MockArray {
     if (typeof entryObj !== "object") {
       throw new Error("Input is not an object!");
     }
+    if (Object.keys(entryObj).length === 0) {
+      throw new Error("Input object lenght cannot be 0");
+    }
+
     this.obj = entryObj;
   }
 
