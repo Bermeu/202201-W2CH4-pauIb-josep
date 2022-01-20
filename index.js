@@ -78,27 +78,5 @@ class MockArray {
 }
 
 const even = (element) => element % 2 === 0;
-const addTwo = (element) => element + 2;
-
-const arrayObject = {
-  a: 2,
-  b: "",
-  c: "",
-  d: 4,
-};
-// Begin of removable lines
-const mockArrayInstanciated = new MockArray(arrayObject);
-
-// console.log(mockArrayInstanciated.length);
-
-// console.log(mockArrayInstanciated.some(even));
-
-// console.log(mockArrayInstanciated.find(even));
-
-// console.log(mockArrayInstanciated.filter(even));
-
-// console.log(mockArrayInstanciated.map(addTwo));
-
-// End of removable lines
 
 export { even, MockArray };
