@@ -1,15 +1,23 @@
 import { MockArray } from "../index";
 
-describe("Given a push method and obj={}", () => {
-  describe("When it receives 23", () => {
-    test("Then it should return  {a0:23}", () => {
-      const value = 23;
-      const object = new MockArray();
-      const expectedValue = { a0: 23 };
+describe("Given MockArray.push()", () => {
+  describe("When inputed 23", () => {
+    test("Then it should add 23 to the object MockArray.obj", () => {
+      const instanciatedArray = {
+        a: "",
+      };
 
-      const expectedObject = object.push(value);
+      const expectedResult = JSON.stringify({
+        a: "",
+        a0: 23,
+      });
 
-      expect(expectedObject).toBe(expectedValue);
+      const valueToGive = 23;
+
+      const iniciatedObject = new MockArray(instanciatedArray);
+      const result = iniciatedObject.push(valueToGive);
+
+      expect(JSON.stringify(MockArray.obj)).toBe(expectedResult);
     });
   });
 });
