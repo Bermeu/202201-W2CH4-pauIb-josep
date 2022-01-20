@@ -4,8 +4,20 @@
   "description": "",
   "main": "index.js",
   "type": "module",
+  "jest": {
+    "verbose": true,
+    "collectCoverage": true,
+    "moduleFileExtensions": [
+      "js",
+      "mjs"
+    ],
+    "transform": {
+      "^.+\\.js$": "babel-jest",
+      "^.+\\.mjs$": "babel-jest"
+    }
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx jest --watchAll"
   },
   "repository": {
     "type": "git",
@@ -19,11 +31,15 @@
   },
   "homepage": "https://github.com/Bermeu/202201-W2CH4-pauIb-josep#readme",
   "devDependencies": {
+    "@babel/core": "^7.16.10",
+    "@babel/node": "^7.16.8",
+    "@babel/preset-env": "^7.16.11",
     "eslint": "^8.7.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.4",
     "husky": "^7.0.4",
-    "jest": "^27.4.7"
+    "jest": "^27.4.7",
+    "babel": "^6.23.0"
   }
 }
