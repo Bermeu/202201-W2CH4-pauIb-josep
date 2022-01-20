@@ -21,3 +21,4 @@ const mockArrayInstanciated = new MockArray();
 console.log(mockArrayInstanciated);
 
 console.log(mockArrayInstanciated.length);
+
