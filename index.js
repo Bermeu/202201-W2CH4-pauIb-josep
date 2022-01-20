@@ -58,15 +58,15 @@ const arrayObject = {
   c: "",
   d: 4,
 };
-//Begin of removable lines
-const mockArrayInstanciated = new MockArray(arrayObject);
+// Begin of removable lines
+// const mockArrayInstanciated = new MockArray(arrayObject);
 
-console.log(mockArrayInstanciated.length);
+// console.log(mockArrayInstanciated.length);
 
-console.log(mockArrayInstanciated.some(even));
+// console.log(mockArrayInstanciated.some(even));
 
-console.log(mockArrayInstanciated.find(even));
+// console.log(mockArrayInstanciated.find(even));
 
-//End of removable lines
+// End of removable lines
 
 export { even, MockArray };
