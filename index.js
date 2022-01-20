@@ -1,9 +1,13 @@
 class MockArray {
   obj = {
-    a: 0,
+    /*     a: 0,
     b: 1,
     c: 1,
-    d: 2,
+    d: 2, */
+    a0: 1,
+    a1: 2,
+    a2: 3,
+    a3: 4,
   };
 
   get length() {
@@ -43,11 +47,12 @@ class MockArray {
     let returnedObject = {};
 
     Object.keys(this.obj).forEach((key) => {
-      if (actingFunc(this.obj[key])) {
-        returnedObject.push({ "`${this.obj[key]}`": this.obj[key] });
+      if (!actingFunc(this.obj[key])) {
+        /* returnedObject.push({ "`${this.obj[key]}`": this.obj[key] }); */
+        delete this.obj[key];
       }
     });
-    return returnedObject;
+    return this.obj;
   }
 
   map(actingFunc) {
@@ -55,13 +60,16 @@ class MockArray {
 
     Object.keys(this.obj).forEach((key) => {
       this.obj[key] = actingFunc(this.obj[key]);
-      returnedObject.push({ "`${this.obj[key]}`": actingFunc(this.obj[key]) });
+      /* returnedObject = this.push({
+        "`${this.obj[key]}`": actingFunc(this.obj[key]),
+      }); */
     });
-    return returnedObject;
+    return this.obj;
   }
 }
 
 const even = (element) => element % 2 === 0;
+const addTwo = (element) => element + 2;
 
 //Begin of removable lines
 const mockArrayInstanciated = new MockArray();
@@ -71,6 +79,10 @@ console.log(mockArrayInstanciated.length);
 console.log(mockArrayInstanciated.some(even));
 
 console.log(mockArrayInstanciated.find(even));
+
+console.log(mockArrayInstanciated.filter(even));
+
+console.log(mockArrayInstanciated.map(addTwo));
 
 //End of removable lines
 
