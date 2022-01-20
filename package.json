@@ -8,7 +8,7 @@
     "verbose": true,
     "collectCoverage": true,
     "moduleFileExtensions": [
-      ".test.js",
+      ".js",
       "mjs"
     ],
     "transform": {
