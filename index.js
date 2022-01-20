@@ -1,10 +1,12 @@
 class MockArray {
-  obj = {
-    a: 0,
-    b: 1,
-    c: 1,
-    d: 2,
-  };
+  obj;
+
+  constructor(entryObj) {
+    if (typeof entryObj !== "object") {
+      throw new Error("Input is not an object!");
+    }
+    this.obj = entryObj;
+  }
 
   get length() {
     return Object.keys(this.obj).length;
@@ -46,8 +48,14 @@ class MockArray {
 
 const even = (element) => element % 2 === 0;
 
+const arrayObject = {
+  a: 2,
+  b: "",
+  c: "",
+  d: 4,
+};
 //Begin of removable lines
-const mockArrayInstanciated = new MockArray();
+const mockArrayInstanciated = new MockArray(arrayObject);
 
 console.log(mockArrayInstanciated.length);
 
