@@ -2,8 +2,8 @@ class MockArray {
   obj = {
     a: 0,
     b: 1,
-    c: 2,
-    d: 3,
+    c: 1,
+    d: 2,
   };
 
   get length() {
@@ -26,7 +26,18 @@ class MockArray {
     return response;
   }
 
-  find() {}
+  find(actingFunc) {
+    let elementToReturn;
+    let fistElement = true;
+
+    Object.keys(this.obj).forEach((key) => {
+      if (actingFunc(this.obj[key]) && fistElement) {
+        elementToReturn = this.obj[key];
+        fistElement = false;
+      }
+    });
+    return elementToReturn;
+  }
 
   filter() {}
 
@@ -36,17 +47,8 @@ const even = (element) => element % 2 === 0;
 
 const mockArrayInstanciated = new MockArray();
 
-/* console.log(mockArrayInstanciated); */
-
 console.log(mockArrayInstanciated.length);
-
 
 console.log(mockArrayInstanciated.some(even));
 
-mockArrayInstanciated.push(23);
-mockArrayInstanciated.push(23);
-mockArrayInstanciated.push(23);
-mockArrayInstanciated.push(23);
-
-console.log(mockArrayInstanciated.length);
-
+console.log(mockArrayInstanciated.find(even));
