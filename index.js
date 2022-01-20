@@ -13,3 +13,5 @@ class mockArray {
 
   map() {}
 }
+
+console.log(mockArray.length);
