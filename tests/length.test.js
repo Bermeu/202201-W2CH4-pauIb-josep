@@ -1,4 +1,4 @@
-import { MockArray } from "../index.js";
+import { MockArray } from "../index";
 
 describe("Given MockArray.lenght", () => {
   describe("When inputed an object with 3 propperties", () => {
