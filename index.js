@@ -45,15 +45,21 @@ class MockArray {
   }
 
   filter(actingFunc) {
-    const returnedObject = {};
+    const newObj = {};
 
     Object.keys(this.obj).forEach((key) => {
-      if (!actingFunc(this.obj[key])) {
-        /* returnedObject.push({ "`${this.obj[key]}`": this.obj[key] }); */
-        delete this.obj[key];
+      if (actingFunc(this.obj[key])) {
+        console.log(this.obj[key]);
+        Object.defineProperty(newObj, key, {
+          value: this.obj[key],
+          enumerable: true,
+          configurable: true,
+        });
       }
+      console.log(this.obj[key]);
     });
-    return this.obj;
+    console.log(Object.keys(newObj).length);
+    return newObj;
   }
 
   map(actingFunc) {
@@ -71,5 +77,14 @@ class MockArray {
 
 const even = (number) => number % 2 === 0;
 const sum = (number) => number + 2;
+
+const instanciatedArray = {
+  a: 1,
+  b: 2,
+  c: 4,
+};
+
+const a = new MockArray(instanciatedArray);
+a.filter(even);
 
 export { even, MockArray, sum };

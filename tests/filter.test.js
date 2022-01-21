@@ -15,9 +15,9 @@ describe("Given MockArray.filter(even)", () => {
       });
 
       const iniciatedObject = new MockArray(instanciatedArray);
-      iniciatedObject.filter(even);
+      const result = iniciatedObject.filter(even);
 
-      expect(JSON.stringify(iniciatedObject.obj)).toBe(expectedResult);
+      expect(JSON.stringify(result)).toBe(expectedResult);
     });
   });
 });
