@@ -49,29 +49,28 @@ class MockArray {
 
     Object.keys(this.obj).forEach((key) => {
       if (actingFunc(this.obj[key])) {
-        console.log(this.obj[key]);
         Object.defineProperty(newObj, key, {
           value: this.obj[key],
           enumerable: true,
           configurable: true,
         });
       }
-      console.log(this.obj[key]);
     });
-    console.log(Object.keys(newObj).length);
     return newObj;
   }
 
   map(actingFunc) {
-    const returnedObject = {};
+    const newObj = {};
 
     Object.keys(this.obj).forEach((key) => {
-      this.obj[key] = actingFunc(this.obj[key]);
-      /* returnedObject = this.push({
-        "`${this.obj[key]}`": actingFunc(this.obj[key]),
-      }); */
+      const newVal = actingFunc(this.obj[key]);
+      Object.defineProperty(newObj, key, {
+        value: newVal,
+        enumerable: true,
+        configurable: true,
+      });
     });
-    return this.obj;
+    return newObj;
   }
 }
 
