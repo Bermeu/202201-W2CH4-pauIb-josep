@@ -75,15 +75,6 @@ class MockArray {
 }
 
 const even = (number) => number % 2 === 0;
-const sum = (number) => number + 2;
+const sum2 = (number) => number + 2;
 
-const instanciatedArray = {
-  a: 1,
-  b: 2,
-  c: 4,
-};
-
-const a = new MockArray(instanciatedArray);
-a.filter(even);
-
-export { even, MockArray, sum };
+export { even, MockArray, sum2 };

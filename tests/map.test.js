@@ -1,4 +1,4 @@
-import { sum, MockArray } from "../index";
+import { sum2, MockArray } from "../index";
 
 describe("Given MockArray.map()", () => {
   describe("When inputed that adds to to object {a: 3, b: 'a'}", () => {
@@ -14,7 +14,7 @@ describe("Given MockArray.map()", () => {
       });
 
       const iniciatedObject = new MockArray(instanciatedArray);
-      const result = iniciatedObject.map(sum);
+      const result = iniciatedObject.map(sum2);
 
       expect(JSON.stringify(result)).toBe(expectedResult);
     });
