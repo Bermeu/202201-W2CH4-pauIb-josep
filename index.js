@@ -16,9 +16,8 @@ class MockArray {
     return Object.keys(this.obj).length;
   }
 
-  push(value) {
-    const lengthArray = this.length;
-    this.obj[`property${lengthArray}`] = value;
+  push(newValue) {
+    this.obj[this.length] = newValue;
   }
 
   some(actingFunc) {
@@ -46,30 +45,36 @@ class MockArray {
   }
 
   filter(actingFunc) {
-    const returnedObject = {};
+    const newObj = {};
 
     Object.keys(this.obj).forEach((key) => {
-      if (!actingFunc(this.obj[key])) {
-        /* returnedObject.push({ "`${this.obj[key]}`": this.obj[key] }); */
-        delete this.obj[key];
+      if (actingFunc(this.obj[key])) {
+        Object.defineProperty(newObj, key, {
+          value: this.obj[key],
+          enumerable: true,
+          configurable: true,
+        });
       }
     });
-    return this.obj;
+    return newObj;
   }
 
   map(actingFunc) {
-    const returnedObject = {};
+    const newObj = {};
 
     Object.keys(this.obj).forEach((key) => {
-      this.obj[key] = actingFunc(this.obj[key]);
-      /* returnedObject = this.push({
-        "`${this.obj[key]}`": actingFunc(this.obj[key]),
-      }); */
+      const newVal = actingFunc(this.obj[key]);
+      Object.defineProperty(newObj, key, {
+        value: newVal,
+        enumerable: true,
+        configurable: true,
+      });
     });
-    return this.obj;
+    return newObj;
   }
 }
 
-const even = (element) => element % 2 === 0;
+const even = (number) => number % 2 === 0;
+const sum2 = (number) => number + 2;
 
-export { even, MockArray };
+export { even, MockArray, sum2 };
