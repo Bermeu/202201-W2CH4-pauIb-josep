@@ -69,6 +69,7 @@ class MockArray {
   }
 }
 
-const even = (element) => element % 2 === 0;
+const even = (number) => number % 2 === 0;
+const sum = (number) => number + 2;
 
-export { even, MockArray };
+export { even, MockArray, sum };
